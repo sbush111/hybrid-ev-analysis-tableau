@@ -1,0 +1,12 @@
+us_light_vehicles_sales_by_fuel_type.csv
+Light Duty Electric Drive Vehicles Monthly Sales Updates. Argonne National Laboratory. https://www.anl.gov/esia/light-duty-electric-drive-vehicles-monthly-sales-updates
+
+us_greenhouse_gas_emissions_in_co2e_by_year.csv
+EPA (2024). Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2022 U.S. [Table 2-1] Environmental Protection Agency, EPA 430R-24004. https://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks-1990-2022.
+
+car_sales_by_state_and_fuel_type_2024.csv
+https://afdc.energy.gov/vehicle-registration?trk=public_post_comment-text
+
+state_pop_2024
+https://www.census.gov/newsroom/press-kits/2024/national-state-population-estimates.html
+
