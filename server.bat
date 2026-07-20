@@ -1,0 +1,1 @@
+conda run -s -n http uvicorn dummy_api:app
