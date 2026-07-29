@@ -1,8 +1,8 @@
-from dotenv import dotenv_values
-import pandas as pd
-import requests
 import gspread
-from google.oauth2.service_account import Credentials
+import json
+import os
+import requests
+from typing import Any
 
 def retrieve_fuel_station_data(api_key: str, 
                                request_url: str = 'https://developer.nlr.gov/api/alt-fuel-stations/v1.json'
@@ -31,11 +31,11 @@ def retrieve_fuel_station_data(api_key: str,
 
 
 def update_google_sheet(station_counts_per_state: dict[str, int], 
-                        sheet_id: str = '1FmMJVAk6W1L2veZvVDxvsMcP87MpYYxukhWnmuGm3no') -> None:
+                        sheet_id: str,
+                        credentials: dict[str, Any]) -> None:
     
     scopes = ['https://www.googleapis.com/auth/spreadsheets']
-    creds = Credentials.from_service_account_file('credentials.json', scopes=scopes)
-    client = gspread.authorize(creds)
+    client = gspread.service_account_from_dict(credentials)
 
     sheet = client.open_by_key(sheet_id)
 
@@ -51,13 +51,9 @@ def update_google_sheet(station_counts_per_state: dict[str, int],
 
 if __name__ == '__main__':
 
-    config = dotenv_values('.env')
+    api_key = os.environ['NLR_API_KEY']
+    station_counts_per_state = retrieve_fuel_station_data(api_key)
 
-    api_key = config['API_KEY']
-
-    if api_key is None:
-        raise Exception('.env file is missing NLR API key')
-
-    station_counts_per_state = retrieve_fuel_station_data(api_key, 'http://127.0.0.1:8000')
-
-    update_google_sheet(station_counts_per_state)
+    sheet_id = '1FmMJVAk6W1L2veZvVDxvsMcP87MpYYxukhWnmuGm3no'
+    gcp_creds = json.loads(os.environ['GCP_CREDENTIALS'])
+    update_google_sheet(station_counts_per_state, sheet_id, gcp_creds)
