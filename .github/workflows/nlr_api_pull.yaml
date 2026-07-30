@@ -1,0 +1,28 @@
+name: NLR API Pull
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install modules
+        run: pip install gspread requests
+
+      - name: Run script
+        env:
+          'NLR_API_KEY': ${{ secrets.NLR_API_KEY }}
+          'GCP_CREDENTIALS': ${{ secrets.GCP_CREDENTIALS }}
+        run: python update_data.py
