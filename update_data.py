@@ -54,6 +54,6 @@ if __name__ == '__main__':
     api_key = os.environ['NLR_API_KEY']
     station_counts_per_state = retrieve_fuel_station_data(api_key)
 
-    sheet_id = '1FmMJVAk6W1L2veZvVDxvsMcP87MpYYxukhWnmuGm3no'
+    sheet_id = '1TGCCWwFq3PpIgNr_UrQEHJKzxi5q47Z8_2dRDyIjJQs'
     gcp_creds = json.loads(os.environ['GCP_CREDENTIALS'])
     update_google_sheet(station_counts_per_state, sheet_id, gcp_creds)
