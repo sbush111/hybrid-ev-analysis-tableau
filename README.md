@@ -4,9 +4,9 @@ A Tableau data visualization project that assesses the current state of Hybrid a
 
 ## Overview
 
-Click below to see the video presentation for this project 🡓🡓🡓 
+Click below to see the video presentation for this project.
 
-[![Watch the video](https://img.youtube.com/vi/FuW8dX3bUlw/0.jpg)](https://www.youtube.com/watch?v=FuW8dX3bUlw)
+[![Watch the video](.github/images/presentation_thumbnail_with_play_button.png)](https://www.youtube.com/watch?v=FuW8dX3bUlw)
 
 This report seeks to 
 assess the current state of Hybrid and Electric Vehicle (H/EV) adoption in the United States in 
