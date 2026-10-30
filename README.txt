@@ -1,1 +1,0 @@
-A simple data visualization project using Tableau to assess the current state of Hybrid and Electric Vehicle adoption in the U.S.
