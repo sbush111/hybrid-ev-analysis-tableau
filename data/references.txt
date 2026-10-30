@@ -10,3 +10,5 @@ https://afdc.energy.gov/vehicle-registration?trk=public_post_comment-text
 state_pop_2024
 https://www.census.gov/newsroom/press-kits/2024/national-state-population-estimates.html
 
+NLR All Station API
+https://developer.nlr.gov/docs/transportation/alt-fuel-stations-v1/all/
